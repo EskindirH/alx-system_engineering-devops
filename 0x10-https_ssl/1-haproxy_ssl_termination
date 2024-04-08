@@ -37,18 +37,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend http
+frontend bit-tech-http
         bind *:80
         http-request set-header X-Forwarded-Proto http
-        default_backend web-backend
+        default_backend bit-tech-backend
 
-frontend www-https
-        bind *:443 ssl crt /etc/haproxy/ssl/www.luisch.tech.pem
+frontend bit-tech-https
+        bind *:443 ssl crt /etc/haproxy/certs/www.bitit.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend web-backend
+        default_backend bit-tech-backend
 
-backend web-backend
+backend bit-tech-backend
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
-        server 938-web-01 35.231.33.237:80 check
-        server 938-web-02 34.74.155.163:80 check
+        server 470751-web-01 54.144.198.193:80 check
+        server 470751-web-02 100.24.237.90:80 check
+
