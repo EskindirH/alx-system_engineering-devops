@@ -24,12 +24,14 @@ def top_ten(subreddit):
                        headers=headers,
                        params=params,
                        allow_redirects=False)
+
     if res.status_code != 200:
         print(None)
         return
 
     dic = res.json()
     hot_posts = dic['data']['children']
+
     if len(hot_posts) == 0:
         print(None)
     else:
