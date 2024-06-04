@@ -10,7 +10,7 @@ import requests
 
 def top_ten(subreddit):
     """ Queries to Reddit API """
-    u_agent = 'Mozilla/5.0'
+    u_agent = 'custom:linx/5.0'
 
     headers = {
         'User-Agent': u_agent
