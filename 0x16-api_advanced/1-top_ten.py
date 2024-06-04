@@ -32,7 +32,6 @@ def top_ten(subreddit):
 
     dic = res.json()
     hot_posts = dic['data']['children']
-
     if len(hot_posts) == 0:
         print(None)
     else:
