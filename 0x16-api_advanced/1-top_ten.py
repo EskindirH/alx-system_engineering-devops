@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 """
-Function that queries the Reddit API and prints
-the top ten hot posts of a subreddit
+prints top ten hot posts
 """
 
-
 import requests
-
+from sys import argv
 
 def top_ten(subreddit):
     """ Queries to Reddit API """
-    u_agent = 'custom:linx/5.0'
+    u_agent = 'Mozilla/5.0'
 
     headers = {
         'User-Agent': u_agent
@@ -20,16 +18,14 @@ def top_ten(subreddit):
         'limit': 10
     }
 
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     res = requests.get(url,
                        headers=headers,
                        params=params,
                        allow_redirects=False)
-
     if res.status_code != 200:
         print(None)
         return
-
     dic = res.json()
     hot_posts = dic['data']['children']
     if len(hot_posts) == 0:
@@ -37,3 +33,6 @@ def top_ten(subreddit):
     else:
         for post in hot_posts:
             print(post['data']['title'])
+
+if __name__ == '__main__':
+    top_ten(argv[1])
