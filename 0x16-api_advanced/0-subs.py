@@ -2,12 +2,13 @@
 """
 Query that returns the number of subscribers.
 """
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """ Queries to Reddit API """
-    u_agent = 'Mozilla/5.0'
+    """returns the number of subscribers"""
+    u_agent = 'Custom-agent'
 
     headers = {
         'User-Agent': u_agent
