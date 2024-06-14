@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Function that queries subscribers on a given Reddit subreddit."""
+"""Queries subscribers on a given Reddit subreddit."""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """
-    Return the number of subscribers.
+    """Return the number of subscribers.
     Args:
         subreddit: subreddits.
 
     Returns:
         int: number of subscribers.
+
     """
 
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
