@@ -50,6 +50,6 @@ frontend bit-tech-https
 backend bit-tech-backend
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
-        server 470751-web-01 54.144.198.193:80 check
-        server 470751-web-02 100.24.237.90:80 check
+        server 470751-web-01 54.157.155.184:80 check
+        server 470751-web-02 35.174.176.188:80 check
 
