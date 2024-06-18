@@ -41,8 +41,8 @@ frontend bit-tech-frontend
 
 backend bit-tech-backend
     balance roundrobin
-    server 470751-web-01 54.144.198.193 check port 80
-    server 470751-web-02 100.24.237.90 check port 80
+    server 470751-web-01 54.90.11.90 check port 80
+    server 470751-web-02 3.85.196.248 check port 80
 "
 
 # shellcheck disable=SC2154
